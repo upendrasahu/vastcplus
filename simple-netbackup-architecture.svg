@@ -1,0 +1,131 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Styles and Definitions -->
+  <defs>
+    <!-- Arrow marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+
+    <!-- Gradients -->
+    <linearGradient id="masterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dbeafe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bfdbfe;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="mediaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dcfce7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bbf7d0;stop-opacity:1" />
+    </linearGradient>
+
+    <linearGradient id="clientGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fde68a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#1f2937">
+    NetBackup Simple Architecture
+  </text>
+
+  <!-- Master Server -->
+  <g id="master-server">
+    <rect x="300" y="70" width="200" height="100" fill="url(#masterGradient)" stroke="#2563eb" stroke-width="3" rx="10"/>
+    <text x="400" y="105" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e40af">Master Server</text>
+    <text x="400" y="125" text-anchor="middle" font-size="12" fill="#374151">Policy Management</text>
+    <text x="400" y="145" text-anchor="middle" font-size="12" fill="#374151">Job Scheduling</text>
+    <text x="400" y="160" text-anchor="middle" font-size="12" fill="#374151">Administration</text>
+  </g>
+
+  <!-- Media Server with OST Driver -->
+  <g id="media-server">
+    <rect x="250" y="250" width="300" height="180" fill="url(#mediaGradient)" stroke="#059669" stroke-width="3" rx="10"/>
+    <text x="400" y="280" text-anchor="middle" font-size="18" font-weight="bold" fill="#047857">Media Server</text>
+
+    <!-- OST Driver enclosed within Media Server -->
+    <rect x="280" y="300" width="240" height="110" fill="#ffffff" stroke="#047857" stroke-width="2" rx="8"/>
+    <text x="400" y="325" text-anchor="middle" font-size="16" font-weight="bold" fill="#047857">OST Driver</text>
+
+    <!-- OST Components -->
+    <rect x="290" y="340" width="100" height="30" fill="#f0fdf4" stroke="#16a34a" stroke-width="1" rx="5"/>
+    <text x="340" y="360" text-anchor="middle" font-size="11" fill="#15803d">OST Core</text>
+
+    <rect x="410" y="340" width="100" height="30" fill="#fef2f2" stroke="#dc2626" stroke-width="1" rx="5"/>
+    <text x="460" y="360" text-anchor="middle" font-size="11" fill="#dc2626">Vast Plugin</text>
+
+    <text x="400" y="390" text-anchor="middle" font-size="12" fill="#374151">Storage Interface</text>
+    <text x="400" y="405" text-anchor="middle" font-size="10" fill="#6b7280">(libstspiVastDataMT.so)</text>
+  </g>
+
+  <!-- NetBackup Client -->
+  <g id="netbackup-client">
+    <rect x="100" y="500" width="150" height="80" fill="url(#clientGradient)" stroke="#d97706" stroke-width="3" rx="10"/>
+    <text x="175" y="530" text-anchor="middle" font-size="16" font-weight="bold" fill="#92400e">NetBackup</text>
+    <text x="175" y="550" text-anchor="middle" font-size="16" font-weight="bold" fill="#92400e">Client</text>
+    <text x="175" y="570" text-anchor="middle" font-size="11" fill="#374151">Data Source</text>
+  </g>
+
+  <!-- Additional Client -->
+  <g id="netbackup-client-2">
+    <rect x="550" y="500" width="150" height="80" fill="url(#clientGradient)" stroke="#d97706" stroke-width="3" rx="10"/>
+    <text x="625" y="530" text-anchor="middle" font-size="16" font-weight="bold" fill="#92400e">NetBackup</text>
+    <text x="625" y="550" text-anchor="middle" font-size="16" font-weight="bold" fill="#92400e">Client</text>
+    <text x="625" y="570" text-anchor="middle" font-size="11" fill="#374151">Data Source</text>
+  </g>
+
+  <!-- Arrows showing data flow -->
+  <!-- Master to Media Server -->
+  <path d="M 400 170 L 400 250" stroke="#2563eb" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="420" y="210" font-size="12" fill="#2563eb" font-weight="bold">Control</text>
+
+  <!-- Master to Client 1 (Job Assignment) -->
+  <path d="M 350 150 L 200 500" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  <text x="250" y="320" font-size="11" fill="#8b5cf6" font-weight="bold" transform="rotate(-65 250 320)">Job Assignment</text>
+
+  <!-- Master to Client 2 (Job Assignment) -->
+  <path d="M 450 150 L 600 500" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="5,5"/>
+  <text x="550" y="320" font-size="11" fill="#8b5cf6" font-weight="bold" transform="rotate(65 550 320)">Job Assignment</text>
+
+  <!-- Client 1 to Media Server -->
+  <path d="M 250 540 L 320 430" stroke="#d97706" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="260" y="480" font-size="12" fill="#d97706" font-weight="bold">Backup Data</text>
+
+  <!-- Client 2 to Media Server -->
+  <path d="M 550 540 L 480 430" stroke="#d97706" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="520" y="480" font-size="12" fill="#d97706" font-weight="bold">Backup Data</text>
+
+
+
+  <!-- Component Legend -->
+  <g id="legend">
+    <rect x="50" y="350" width="180" height="140" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" rx="5"/>
+    <text x="140" y="375" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">Legend</text>
+
+    <rect x="60" y="385" width="15" height="15" fill="url(#masterGradient)" stroke="#2563eb" stroke-width="1"/>
+    <text x="85" y="397" font-size="11" fill="#374151">Master Server</text>
+
+    <rect x="60" y="405" width="15" height="15" fill="url(#mediaGradient)" stroke="#059669" stroke-width="1"/>
+    <text x="85" y="417" font-size="11" fill="#374151">Media Server + OST</text>
+
+    <rect x="60" y="425" width="15" height="15" fill="url(#clientGradient)" stroke="#d97706" stroke-width="1"/>
+    <text x="85" y="437" font-size="11" fill="#374151">NetBackup Client</text>
+
+    <line x1="60" y1="450" x2="85" y2="450" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="95" y="455" font-size="10" fill="#374151">Control Flow</text>
+
+    <line x1="60" y1="465" x2="85" y2="465" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)" stroke-dasharray="3,3"/>
+    <text x="95" y="470" font-size="10" fill="#374151">Job Assignment</text>
+
+    <line x1="60" y1="480" x2="85" y2="480" stroke="#d97706" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="95" y="485" font-size="10" fill="#374151">Backup Data</text>
+  </g>
+
+  <!-- Flow descriptions - moved below diagram -->
+  <g id="flow-descriptions">
+    <text x="400" y="620" text-anchor="middle" font-size="16" font-weight="bold" fill="#374151">Data Flow Process:</text>
+    <text x="400" y="645" text-anchor="middle" font-size="13" fill="#6b7280">1. Master Server manages policies and controls Media Server</text>
+    <text x="400" y="665" text-anchor="middle" font-size="13" fill="#6b7280">2. Master assigns jobs and tells Clients which Media Server to use</text>
+    <text x="400" y="685" text-anchor="middle" font-size="13" fill="#6b7280">3. Clients send backup data to assigned Media Server</text>
+    <text x="400" y="705" text-anchor="middle" font-size="13" fill="#6b7280">4. OST Driver processes and stores data via Vast Plugin</text>
+  </g>
+</svg>

@@ -35,7 +35,7 @@ The Vast Data OpenStorage Technology (OST) driver enables seamless integration b
 
 #### NetBackup Components
 
-![NetBackup Components](./netbackup-components.jpg)
+![NetBackup Components](./simple-netbackup-architecture.svg)
 
 **Master Server**
 - Central management point for all NetBackup operations
