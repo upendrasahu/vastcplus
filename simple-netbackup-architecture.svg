@@ -23,11 +23,6 @@
     </linearGradient>
   </defs>
 
-  <!-- Title -->
-  <text x="400" y="30" text-anchor="middle" font-size="22" font-weight="bold" fill="#1f2937">
-    NetBackup Simple Architecture
-  </text>
-
   <!-- Master Server -->
   <g id="master-server">
     <rect x="300" y="70" width="200" height="100" fill="url(#masterGradient)" stroke="#2563eb" stroke-width="3" rx="10"/>
