@@ -36,6 +36,10 @@ The integration consists of:
 - **Vast Data Side**: Cluster with S3 API endpoint and management API endpoint
 - **Communication**: Dual protocol - REST for control, S3 for data
 
+### Driver Architecture
+
+![Vast Data OST Driver - NFS Architecture](./ost-driver-layers-nfs.svg)
+
 ---
 
 ## 3. Data Transfer Protocol Options
