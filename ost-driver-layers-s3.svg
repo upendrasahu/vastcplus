@@ -1,0 +1,118 @@
+<svg viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="24" font-weight="bold" fill="#333">Vast Data OST Driver - Simplified Architecture</text>
+  
+  <!-- Main Container -->
+  <rect x="50" y="60" width="1100" height="820" fill="white" stroke="#333" stroke-width="3" rx="10"/>
+  <text x="600" y="90" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">libstspiVastDataMT.so</text>
+  
+  <!-- Control Path (Left Side) -->
+  <g id="control-path">
+    <rect x="100" y="120" width="450" height="720" fill="#f9f9f9" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="325" y="150" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Control Path (Management)</text>
+    
+    <!-- OST API Layer -->
+    <rect x="130" y="180" width="390" height="100" fill="white" stroke="#666" stroke-width="1" rx="5"/>
+    <text x="325" y="205" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">OST API Implementation</text>
+    <text x="325" y="225" text-anchor="middle" font-size="11" fill="#666">Server, LSU, Image Management</text>
+    <text x="325" y="245" text-anchor="middle" font-size="10" fill="#666">stsp_open_server(), stsp_list_lsu()</text>
+    <text x="325" y="260" text-anchor="middle" font-size="10" fill="#666">stsp_create_image(), stsp_delete_image()</text>
+    
+    <!-- Management Operations -->
+    <rect x="130" y="310" width="390" height="100" fill="white" stroke="#666" stroke-width="1" rx="5"/>
+    <text x="325" y="335" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Management Operations</text>
+    <text x="325" y="355" text-anchor="middle" font-size="11" fill="#666">Authentication &amp; Session Management</text>
+    <text x="325" y="375" text-anchor="middle" font-size="11" fill="#666">Metadata Operations</text>
+    <text x="325" y="395" text-anchor="middle" font-size="11" fill="#666">Catalog Updates</text>
+    
+    <!-- REST Client -->
+    <rect x="130" y="440" width="390" height="100" fill="white" stroke="#666" stroke-width="1" rx="5"/>
+    <text x="325" y="465" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Vast Management API Client</text>
+    <text x="325" y="485" text-anchor="middle" font-size="11" fill="#666">REST API over HTTPS</text>
+    <text x="325" y="505" text-anchor="middle" font-size="11" fill="#666">Bucket/Object Management</text>
+    <text x="325" y="525" text-anchor="middle" font-size="11" fill="#666">Authentication Tokens</text>
+    
+    <!-- Down Arrow -->
+    <path d="M 325 540 L 325 580" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Vast Management API -->
+    <rect x="130" y="590" width="390" height="80" fill="#e8e8e8" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="325" y="620" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Vast Management API</text>
+    <text x="325" y="640" text-anchor="middle" font-size="11" fill="#666">HTTPS Port 443</text>
+    <text x="325" y="655" text-anchor="middle" font-size="11" fill="#666">Metadata &amp; Control Operations</text>
+  </g>
+  
+  <!-- Data Path (Right Side) -->
+  <g id="data-path">
+    <rect x="650" y="120" width="450" height="720" fill="#f9f9f9" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="875" y="150" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Data Path (Backup/Restore)</text>
+    
+    <!-- OST Data API -->
+    <rect x="680" y="180" width="390" height="100" fill="white" stroke="#666" stroke-width="1" rx="5"/>
+    <text x="875" y="205" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">OST Data Transfer APIs</text>
+    <text x="875" y="225" text-anchor="middle" font-size="11" fill="#666">Image Read/Write Operations</text>
+    <text x="875" y="245" text-anchor="middle" font-size="10" fill="#666">stsp_write_image(), stsp_read_image()</text>
+    <text x="875" y="260" text-anchor="middle" font-size="10" fill="#666">stsp_copy_image(), stsp_copy_extent()</text>
+    
+    <!-- Data Operations -->
+    <rect x="680" y="310" width="390" height="100" fill="white" stroke="#666" stroke-width="1" rx="5"/>
+    <text x="875" y="335" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Data Operations Handler</text>
+    <text x="875" y="355" text-anchor="middle" font-size="11" fill="#666">Chunking &amp; Buffering (64MB blocks)</text>
+    <text x="875" y="375" text-anchor="middle" font-size="11" fill="#666">Compression (Optional)</text>
+    <text x="875" y="395" text-anchor="middle" font-size="11" fill="#666">Checksum Calculation</text>
+    
+    <!-- S3 Client -->
+    <rect x="680" y="440" width="390" height="100" fill="white" stroke="#666" stroke-width="1" rx="5"/>
+    <text x="875" y="465" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Vast S3-Compatible Client</text>
+    <text x="875" y="485" text-anchor="middle" font-size="11" fill="#666">S3 Protocol Implementation</text>
+    <text x="875" y="505" text-anchor="middle" font-size="11" fill="#666">Multipart Upload/Download</text>
+    <text x="875" y="525" text-anchor="middle" font-size="11" fill="#666">Parallel Streams (4-8 threads)</text>
+    
+    <!-- Down Arrow -->
+    <path d="M 875 540 L 875 580" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Vast S3 API -->
+    <rect x="680" y="590" width="390" height="80" fill="#e8e8e8" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="875" y="620" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Vast S3 Data API</text>
+    <text x="875" y="640" text-anchor="middle" font-size="11" fill="#666">S3 Port 9000 (or 9443 for HTTPS)</text>
+    <text x="875" y="655" text-anchor="middle" font-size="11" fill="#666">High-Performance Data Transfer</text>
+  </g>
+  
+  <!-- Common Components -->
+  <g id="common-components">
+    <rect x="350" y="700" width="500" height="120" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="600" y="725" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Common Components</text>
+    
+    <rect x="370" y="740" width="140" height="60" fill="#f9f9f9" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="440" y="765" text-anchor="middle" font-size="11" fill="#333">Thread Pool</text>
+    <text x="440" y="785" text-anchor="middle" font-size="10" fill="#666">(8-16 threads)</text>
+    
+    <rect x="530" y="740" width="140" height="60" fill="#f9f9f9" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="600" y="765" text-anchor="middle" font-size="11" fill="#333">Connection Pool</text>
+    <text x="600" y="785" text-anchor="middle" font-size="10" fill="#666">(Keep-alive)</text>
+    
+    <rect x="690" y="740" width="140" height="60" fill="#f9f9f9" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="760" y="765" text-anchor="middle" font-size="11" fill="#333">Error Handler</text>
+    <text x="760" y="785" text-anchor="middle" font-size="10" fill="#666">(Retry logic)</text>
+  </g>
+  
+  <!-- Flow Indicators -->
+  <text x="325" y="300" text-anchor="middle" font-size="10" fill="#666">↓</text>
+  <text x="325" y="430" text-anchor="middle" font-size="10" fill="#666">↓</text>
+  <text x="875" y="300" text-anchor="middle" font-size="10" fill="#666">↓</text>
+  <text x="875" y="430" text-anchor="middle" font-size="10" fill="#666">↓</text>
+  
+  <!-- Separation Line -->
+  <line x1="600" y1="120" x2="600" y2="690" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+  
+  <!-- Labels -->
+  <text x="75" y="400" text-anchor="middle" font-size="12" fill="#666" transform="rotate(-90 75 400)">Lightweight Operations</text>
+  <text x="1125" y="400" text-anchor="middle" font-size="12" fill="#666" transform="rotate(90 1125 400)">Heavy Data Transfer</text>
+  
+  <!-- Arrow definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

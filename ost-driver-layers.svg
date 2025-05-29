@@ -99,15 +99,15 @@
   <!-- REST API & Network Layer -->
   <g id="network-layer">
     <rect x="150" y="720" width="900" height="120" fill="#f8f8f8" stroke="#333" stroke-width="2" rx="5"/>
-    <text x="600" y="745" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">REST API &amp; Network Layer</text>
-    <text x="600" y="765" text-anchor="middle" font-size="12" fill="#666">HTTP/REST Communication with TLS Security</text>
+    <text x="600" y="745" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">VAST Data REST API &amp; Network Layer</text>
+    <text x="600" y="765" text-anchor="middle" font-size="12" fill="#666">Communication Protocols and Network Clients</text>
     
     <!-- Network Components -->
     <rect x="170" y="780" width="200" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
     <text x="270" y="805" text-anchor="middle" font-size="10" fill="#333">HTTPS Client</text>
     
     <rect x="390" y="780" width="200" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
-    <text x="490" y="805" text-anchor="middle" font-size="10" fill="#333">TLS Security</text>
+    <text x="490" y="805" text-anchor="middle" font-size="10" fill="#333">S3/NFS/TCP Client</text>
     
     <rect x="610" y="780" width="200" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
     <text x="710" y="805" text-anchor="middle" font-size="10" fill="#333">Retry Logic</text>

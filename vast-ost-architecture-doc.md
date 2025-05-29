@@ -107,7 +107,7 @@ The Vast Data OpenStorage Technology (OST) driver enables seamless integration b
 
 4. **Data Transfer**
    - Client sends data to media server
-   - Plugin writes data to Vast Data storage via REST API
+   - Plugin writes data to Vast Data storage via Vast Data API
    - Deduplication occurs within Vast Data cluster
 
 5. **Catalog Update**
@@ -122,7 +122,50 @@ The Vast Data OpenStorage Technology (OST) driver enables seamless integration b
 
 ![Vast Data OST Driver Layer Architecture](./ost-driver-layers.svg)
 
-### 3.2 Layer Descriptions
+## 3.2 Data Transfer Protocol Options
+
+### Available Protocols for Vast Data
+
+![Vast OST Driver - Data Transfer Options](./data-flow-options-diagram.svg)
+
+Before implementing, we need to determine which protocols Vast Data actually supports:
+
+### Option 1: NFS/NFSv3 (Most Likely)
+**Vast Data is known for high-performance NFS**
+- **Implementation**: Mount Vast as NFS, use standard file I/O
+- **Advantages**: 
+  - Simple implementation
+  - Vast optimized for NFS performance
+  - Transparent deduplication
+  - Works with existing Vast deployments
+- **Considerations**:
+  - Requires NFS mount on media servers
+  - File-based semantics
+
+### Option 2: S3-Compatible API (If Available)
+**Some storage systems offer S3 gateways**
+- **Implementation**: Use S3 SDK for object operations
+- **Advantages**:
+  - No mount points needed
+  - Good for multi-site deployments
+  - Standard protocol
+- **Considerations**:
+  - Need to verify if Vast provides S3
+  - May not be as optimized as NFS
+
+### Option 3: Vast Native API (If Provided)
+**Proprietary high-performance protocol**
+- **Implementation**: Use Vast SDK/library
+- **Advantages**:
+  - Best performance
+  - Full feature access
+  - Optimized for Vast architecture
+- **Considerations**:
+  - Requires Vast SDK
+  - More complex implementation
+
+
+### 3.3 Layer Descriptions
 
 #### OST API Layer
 **Purpose**: Provides NetBackup interface compliance by implementing all required OST API functions.
@@ -248,7 +291,7 @@ The Vast Data OpenStorage Technology (OST) driver enables seamless integration b
   - Handles multi-factor authentication
   - Provides credential caching
 
-#### REST API & Network Layer
+#### VAST Data REST API & Network Layer
 **Purpose**: Provides secure network communication with Vast Data cluster.
 
 **Components**:
@@ -257,12 +300,13 @@ The Vast Data OpenStorage Technology (OST) driver enables seamless integration b
   - Manages request/response handling
   - Provides connection multiplexing
   - Implements request pipelining
+  - TLS security
 
-- **TLS Security**
-  - Enforces TLS 1.2+ encryption
-  - Manages certificate validation
-  - Implements certificate pinning
-  - Provides cipher suite configuration
+- **S3/NFS/TCP Client**
+  - Implements S3, NFS, or TCP protocols for data transfer
+  - Manages data transfer operations
+  - Provides connection pooling
+  - Implements data integrity checks
 
 - **Retry Logic**
   - Implements exponential backoff
@@ -276,7 +320,7 @@ The Vast Data OpenStorage Technology (OST) driver enables seamless integration b
   - Implements error recovery strategies
   - Manages error propagation
 
-### 3.3 Data Flow
+### 3.4 Data Flow
 
 1. **Incoming Request**
    - NetBackup calls OST API function
@@ -290,8 +334,9 @@ The Vast Data OpenStorage Technology (OST) driver enables seamless integration b
 
 3. **Network Communication**
    - REST API layer sends HTTPS request
-   - TLS ensures secure transmission
-   - Response received and parsed
+   - Data I/O client handles data transfers
+   - Retry logic manages transient failures
+   - Error handling logs and propagates errors
 
 4. **Response Handling**
    - Error checking and retry if needed
@@ -354,12 +399,6 @@ The Vast Data OpenStorage Technology (OST) driver enables seamless integration b
 - Linear scaling with cluster size
 - No single point of failure
 - Load balancing across cluster nodes
-
-### 5.5 Compatibility
-- NetBackup 8.1.2 and higher
-- Vast Data 4.0 and higher
-- Linux x86_64 platforms
-- 64-bit plugin implementation
 
 ---
 

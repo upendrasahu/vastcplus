@@ -1,0 +1,142 @@
+<svg viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="700" y="30" text-anchor="middle" font-size="24" font-weight="bold" fill="#333">Vast OST Driver - Data Transfer Options</text>
+  
+  <!-- Option 1: NFS -->
+  <g id="nfs-option">
+    <rect x="50" y="60" width="400" height="320" fill="#f9f9f9" stroke="#333" stroke-width="2" rx="10"/>
+    <text x="250" y="90" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">Option 1: NFS/NFSv3</text>
+    
+    <!-- Flow -->
+    <rect x="100" y="120" width="300" height="60" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="250" y="155" text-anchor="middle" font-size="14" fill="#333">OST Plugin</text>
+    
+    <path d="M 250 180 L 250 220" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="260" y="205" font-size="10" fill="#666">POSIX File I/O</text>
+    
+    <rect x="100" y="220" width="300" height="60" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="250" y="245" text-anchor="middle" font-size="14" fill="#333">NFS Mount Point</text>
+    <text x="250" y="260" text-anchor="middle" font-size="11" fill="#666">/mnt/vast/netbackup/</text>
+    
+    <path d="M 250 280 L 250 320" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="260" y="305" font-size="10" fill="#666">NFS Protocol</text>
+    
+    <rect x="100" y="320" width="300" height="40" fill="#333" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="250" y="345" text-anchor="middle" font-size="14" fill="white">Vast Data Cluster</text>
+  </g>
+  
+  <!-- Option 2: S3 -->
+  <g id="s3-option">
+    <rect x="500" y="60" width="400" height="320" fill="#f9f9f9" stroke="#333" stroke-width="2" rx="10"/>
+    <text x="700" y="90" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">Option 2: S3 API</text>
+    
+    <!-- Flow -->
+    <rect x="550" y="120" width="300" height="60" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="700" y="155" text-anchor="middle" font-size="14" fill="#333">OST Plugin</text>
+    
+    <path d="M 700 180 L 700 220" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="710" y="205" font-size="10" fill="#666">S3 SDK/libcurl</text>
+    
+    <rect x="550" y="220" width="300" height="60" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="700" y="245" text-anchor="middle" font-size="14" fill="#333">S3 Client Library</text>
+    <text x="700" y="260" text-anchor="middle" font-size="11" fill="#666">PUT/GET Objects</text>
+    
+    <path d="M 700 280 L 700 320" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="710" y="305" font-size="10" fill="#666">HTTP/HTTPS</text>
+    
+    <rect x="550" y="320" width="300" height="40" fill="#333" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="700" y="345" text-anchor="middle" font-size="14" fill="white">Vast Data S3 Gateway</text>
+  </g>
+  
+  <!-- Option 3: Native API -->
+  <g id="native-option">
+    <rect x="950" y="60" width="400" height="320" fill="#f9f9f9" stroke="#333" stroke-width="2" rx="10"/>
+    <text x="1150" y="90" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">Option 3: Native API</text>
+    
+    <!-- Flow -->
+    <rect x="1000" y="120" width="300" height="60" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="1150" y="155" text-anchor="middle" font-size="14" fill="#333">OST Plugin</text>
+    
+    <path d="M 1150 180 L 1150 220" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="1160" y="205" font-size="10" fill="#666">Vast SDK</text>
+    
+    <rect x="1000" y="220" width="300" height="60" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="1150" y="245" text-anchor="middle" font-size="14" fill="#333">Vast Native Client</text>
+    <text x="1150" y="260" text-anchor="middle" font-size="11" fill="#666">Proprietary Protocol</text>
+    
+    <path d="M 1150 280 L 1150 320" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="1160" y="305" font-size="10" fill="#666">TCP/RDMA</text>
+    
+    <rect x="1000" y="320" width="300" height="40" fill="#333" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="1150" y="345" text-anchor="middle" font-size="14" fill="white">Vast Data Cluster</text>
+  </g>
+  
+  <!-- Comparison Table -->
+  <g id="comparison">
+    <rect x="50" y="400" width="1300" height="380" fill="white" stroke="#333" stroke-width="2" rx="10"/>
+    <text x="700" y="430" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Protocol Comparison</text>
+    
+    <!-- Headers -->
+    <line x1="50" y1="450" x2="1350" y2="450" stroke="#333" stroke-width="1"/>
+    <text x="200" y="475" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">Aspect</text>
+    <text x="500" y="475" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">NFS/NFSv3</text>
+    <text x="800" y="475" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">S3 API</text>
+    <text x="1100" y="475" text-anchor="middle" font-size="12" font-weight="bold" fill="#333">Native API</text>
+    
+    <!-- Row 1 -->
+    <line x1="50" y1="490" x2="1350" y2="490" stroke="#666" stroke-width="1"/>
+    <text x="200" y="510" text-anchor="middle" font-size="11" fill="#333">Performance</text>
+    <text x="500" y="510" text-anchor="middle" font-size="11" fill="#666">Good (Line rate)</text>
+    <text x="800" y="510" text-anchor="middle" font-size="11" fill="#666">Good (Parallel)</text>
+    <text x="1100" y="510" text-anchor="middle" font-size="11" fill="#666">Best (Optimized)</text>
+    
+    <!-- Row 2 -->
+    <line x1="50" y1="530" x2="1350" y2="530" stroke="#666" stroke-width="1"/>
+    <text x="200" y="550" text-anchor="middle" font-size="11" fill="#333">Complexity</text>
+    <text x="500" y="550" text-anchor="middle" font-size="11" fill="#666">Simple</text>
+    <text x="800" y="550" text-anchor="middle" font-size="11" fill="#666">Medium</text>
+    <text x="1100" y="550" text-anchor="middle" font-size="11" fill="#666">Complex</text>
+    
+    <!-- Row 3 -->
+    <line x1="50" y1="570" x2="1350" y2="570" stroke="#666" stroke-width="1"/>
+    <text x="200" y="590" text-anchor="middle" font-size="11" fill="#333">Vast Support</text>
+    <text x="500" y="590" text-anchor="middle" font-size="11" fill="#666">✓ Built-in</text>
+    <text x="800" y="590" text-anchor="middle" font-size="11" fill="#666">✓ If available</text>
+    <text x="1100" y="590" text-anchor="middle" font-size="11" fill="#666">? Check with Vast</text>
+    
+    <!-- Row 4 -->
+    <line x1="50" y1="610" x2="1350" y2="610" stroke="#666" stroke-width="1"/>
+    <text x="200" y="630" text-anchor="middle" font-size="11" fill="#333">Implementation</text>
+    <text x="500" y="630" text-anchor="middle" font-size="11" fill="#666">File-based</text>
+    <text x="800" y="630" text-anchor="middle" font-size="11" fill="#666">Object-based</text>
+    <text x="1100" y="630" text-anchor="middle" font-size="11" fill="#666">Block/Object</text>
+    
+    <!-- Row 5 -->
+    <line x1="50" y1="650" x2="1350" y2="650" stroke="#666" stroke-width="1"/>
+    <text x="200" y="670" text-anchor="middle" font-size="11" fill="#333">Dedup Integration</text>
+    <text x="500" y="670" text-anchor="middle" font-size="11" fill="#666">Transparent</text>
+    <text x="800" y="670" text-anchor="middle" font-size="11" fill="#666">Transparent</text>
+    <text x="1100" y="670" text-anchor="middle" font-size="11" fill="#666">API-aware</text>
+    
+    <!-- Row 6 -->
+    <line x1="50" y1="690" x2="1350" y2="690" stroke="#666" stroke-width="1"/>
+    <text x="200" y="710" text-anchor="middle" font-size="11" fill="#333">OST Features</text>
+    <text x="500" y="710" text-anchor="middle" font-size="11" fill="#666">Basic</text>
+    <text x="800" y="710" text-anchor="middle" font-size="11" fill="#666">Full</text>
+    <text x="1100" y="710" text-anchor="middle" font-size="11" fill="#666">Full+</text>
+    
+    <!-- Row 7 -->
+    <line x1="50" y1="730" x2="1350" y2="730" stroke="#666" stroke-width="1"/>
+    <text x="200" y="750" text-anchor="middle" font-size="11" fill="#333">Network Requirements</text>
+    <text x="500" y="750" text-anchor="middle" font-size="11" fill="#666">Low latency</text>
+    <text x="800" y="750" text-anchor="middle" font-size="11" fill="#666">HTTP friendly</text>
+    <text x="1100" y="750" text-anchor="middle" font-size="11" fill="#666">Direct connect</text>
+  </g>
+  
+  <!-- Arrow definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+</svg>
