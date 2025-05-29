@@ -3,33 +3,33 @@
   <defs>
     <!-- Arrow marker -->
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
     </marker>
 
     <!-- Gradients -->
     <linearGradient id="masterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#dbeafe;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#bfdbfe;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e2e8f0;stop-opacity:1" />
     </linearGradient>
 
     <linearGradient id="mediaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#dcfce7;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#bbf7d0;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#f1f5f9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#cbd5e1;stop-opacity:1" />
     </linearGradient>
 
     <linearGradient id="clientGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#fef3c7;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#fde68a;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#f9fafb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d1d5db;stop-opacity:1" />
     </linearGradient>
   </defs>
 
   <!-- Master Server -->
   <g id="master-server">
-    <rect x="300" y="70" width="200" height="100" fill="url(#masterGradient)" stroke="#2563eb" stroke-width="3" rx="10"/>
-    <text x="400" y="105" text-anchor="middle" font-size="18" font-weight="bold" fill="#1e40af">Master Server</text>
-    <text x="400" y="125" text-anchor="middle" font-size="12" fill="#374151">Policy Management</text>
-    <text x="400" y="145" text-anchor="middle" font-size="12" fill="#374151">Job Scheduling</text>
-    <text x="400" y="160" text-anchor="middle" font-size="12" fill="#374151">Administration</text>
+    <rect x="300" y="70" width="200" height="100" fill="url(#masterGradient)" stroke="#475569" stroke-width="2" rx="10"/>
+    <text x="400" y="105" text-anchor="middle" font-size="18" font-weight="bold" fill="#1f2937">Master Server</text>
+    <text x="400" y="125" text-anchor="middle" font-size="12" fill="#4b5563">Policy Management</text>
+    <text x="400" y="145" text-anchor="middle" font-size="12" fill="#4b5563">Job Scheduling</text>
+    <text x="400" y="160" text-anchor="middle" font-size="12" fill="#4b5563">Administration</text>
   </g>
 
   <!-- Media Server with OST Driver -->
