@@ -1,0 +1,26 @@
+# Ignore build artifacts
+/build/
+
+# Ignore CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Ignore object files
+*.o
+*.o.d
+
+# Ignore libraries
+*.a
+*.so
+*.dylib
+
+# Ignore temporary files
+*.tmp
+*.log
+*.swp
+.DS_Store
+
+# Ignore test executables
+vastclient_test
