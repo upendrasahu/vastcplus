@@ -207,6 +207,20 @@ The Vast Data OpenStorage Technology (OST) driver enables seamless integration b
   - Manages reader/writer locks for optimization
   - Provides deadlock detection and prevention
 
+**OST Threading Model:**
+- Single-Threaded Handles: Each OST handle (server, image, LSU) can only be accessed by the thread that created it
+- No Handle Sharing: Handles cannot be shared between threads - each thread creates its own handles
+- Plugin Versions: Must build both single-threaded (.so) and multithreaded (MT.dll/.so) versions
+- Internal Thread Safety: Plugin internal implementation must be thread-safe using synchronization primitives
+- Concurrency Model: NetBackup creates multiple threads, each with dedicated handle sets
+
+***Architecture Understanding:***
+
+- NetBackup Core Library: Manages multiple threads, each with its own set of handles
+- OST Driver Interface: Provides single-threaded handles as per OST specification
+- Internal Implementation: Can use thread-safe shared resources (connection pools, etc.)
+- Concurrency Model: Multiple threads each with dedicated handles, not shared handles
+
 #### Vast Data Client Library
 **Purpose**: Interfaces with Vast Data storage services.
 
