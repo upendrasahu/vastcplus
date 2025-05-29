@@ -1,0 +1,167 @@
+<svg viewBox="0 0 1200 1000" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" font-size="24" font-weight="bold" fill="#333">Vast Data OST Driver Layer Architecture</text>
+  
+  <!-- Main Container -->
+  <rect x="100" y="60" width="1000" height="920" fill="white" stroke="#333" stroke-width="3" rx="10"/>
+  <text x="600" y="90" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">libstspiVastDataMT.so</text>
+  
+  <!-- OST API Layer -->
+  <g id="ost-api-layer">
+    <rect x="150" y="120" width="900" height="120" fill="#f8f8f8" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="600" y="145" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">OST API Layer</text>
+    <text x="600" y="165" text-anchor="middle" font-size="12" fill="#666">NetBackup Interface Compliance (stsp_* functions)</text>
+    
+    <!-- API Functions -->
+    <rect x="170" y="180" width="120" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="230" y="205" text-anchor="middle" font-size="10" fill="#333">Server APIs</text>
+    
+    <rect x="310" y="180" width="120" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="370" y="205" text-anchor="middle" font-size="10" fill="#333">LSU APIs</text>
+    
+    <rect x="450" y="180" width="120" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="510" y="205" text-anchor="middle" font-size="10" fill="#333">Image APIs</text>
+    
+    <rect x="590" y="180" width="120" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="650" y="205" text-anchor="middle" font-size="10" fill="#333">Copy APIs</text>
+    
+    <rect x="730" y="180" width="120" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="790" y="205" text-anchor="middle" font-size="10" fill="#333">Event APIs</text>
+    
+    <rect x="870" y="180" width="160" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="950" y="205" text-anchor="middle" font-size="10" fill="#333">Metadata APIs</text>
+  </g>
+  
+  <!-- Operation Handlers Layer -->
+  <g id="operation-handlers">
+    <rect x="150" y="260" width="900" height="140" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="600" y="285" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Operation Handlers</text>
+    <text x="600" y="305" text-anchor="middle" font-size="12" fill="#666">Server, LSU, and Image Operation Logic</text>
+    
+    <!-- Handler Components -->
+    <rect x="170" y="320" width="200" height="60" fill="#f8f8f8" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="270" y="345" text-anchor="middle" font-size="11" fill="#333">Server Handler</text>
+    <text x="270" y="365" text-anchor="middle" font-size="9" fill="#666">Connection Management</text>
+    
+    <rect x="390" y="320" width="200" height="60" fill="#f8f8f8" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="490" y="345" text-anchor="middle" font-size="11" fill="#333">LSU Handler</text>
+    <text x="490" y="365" text-anchor="middle" font-size="9" fill="#666">Bucket Mapping</text>
+    
+    <rect x="610" y="320" width="200" height="60" fill="#f8f8f8" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="710" y="345" text-anchor="middle" font-size="11" fill="#333">Image Handler</text>
+    <text x="710" y="365" text-anchor="middle" font-size="9" fill="#666">Object Operations</text>
+    
+    <rect x="830" y="320" width="200" height="60" fill="#f8f8f8" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="930" y="345" text-anchor="middle" font-size="11" fill="#333">Copy Handler</text>
+    <text x="930" y="365" text-anchor="middle" font-size="9" fill="#666">Server-side Copy</text>
+  </g>
+  
+  <!-- Threading Layer -->
+  <g id="threading-layer">
+    <rect x="150" y="420" width="900" height="120" fill="#f8f8f8" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="600" y="445" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Threading Layer</text>
+    <text x="600" y="465" text-anchor="middle" font-size="12" fill="#666">Thread Pools and Connection Management</text>
+    
+    <!-- Threading Components -->
+    <rect x="170" y="480" width="200" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="270" y="505" text-anchor="middle" font-size="10" fill="#333">Thread Pool Manager</text>
+    
+    <rect x="390" y="480" width="200" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="490" y="505" text-anchor="middle" font-size="10" fill="#333">Connection Pool</text>
+    
+    <rect x="610" y="480" width="200" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="710" y="505" text-anchor="middle" font-size="10" fill="#333">Async I/O Handler</text>
+    
+    <rect x="830" y="480" width="200" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="930" y="505" text-anchor="middle" font-size="10" fill="#333">Lock Manager</text>
+  </g>
+  
+  <!-- Vast Data Client Library -->
+  <g id="vast-client-layer">
+    <rect x="150" y="560" width="900" height="140" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="600" y="585" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Vast Data Client Library</text>
+    <text x="600" y="605" text-anchor="middle" font-size="12" fill="#666">Management and Data I/O Clients</text>
+    
+    <!-- Client Components -->
+    <rect x="170" y="620" width="260" height="60" fill="#f8f8f8" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="300" y="645" text-anchor="middle" font-size="11" fill="#333">Management Client</text>
+    <text x="300" y="665" text-anchor="middle" font-size="9" fill="#666">Bucket/Object Metadata</text>
+    
+    <rect x="450" y="620" width="260" height="60" fill="#f8f8f8" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="580" y="645" text-anchor="middle" font-size="11" fill="#333">Data I/O Client</text>
+    <text x="580" y="665" text-anchor="middle" font-size="9" fill="#666">High-performance I/O</text>
+    
+    <rect x="730" y="620" width="300" height="60" fill="#f8f8f8" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="880" y="645" text-anchor="middle" font-size="11" fill="#333">Authentication Manager</text>
+    <text x="880" y="665" text-anchor="middle" font-size="9" fill="#666">Token/Certificate Management</text>
+  </g>
+  
+  <!-- REST API & Network Layer -->
+  <g id="network-layer">
+    <rect x="150" y="720" width="900" height="120" fill="#f8f8f8" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="600" y="745" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">REST API &amp; Network Layer</text>
+    <text x="600" y="765" text-anchor="middle" font-size="12" fill="#666">HTTP/REST Communication with TLS Security</text>
+    
+    <!-- Network Components -->
+    <rect x="170" y="780" width="200" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="270" y="805" text-anchor="middle" font-size="10" fill="#333">HTTPS Client</text>
+    
+    <rect x="390" y="780" width="200" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="490" y="805" text-anchor="middle" font-size="10" fill="#333">TLS Security</text>
+    
+    <rect x="610" y="780" width="200" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="710" y="805" text-anchor="middle" font-size="10" fill="#333">Retry Logic</text>
+    
+    <rect x="830" y="780" width="200" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="930" y="805" text-anchor="middle" font-size="10" fill="#333">Error Handling</text>
+  </g>
+  
+  <!-- Data Flow Arrows -->
+  <g id="data-flow">
+    <!-- Downward arrows between layers -->
+    <path d="M 600 240 L 600 260" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 600 400 L 600 420" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 600 540 L 600 560" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <path d="M 600 700 L 600 720" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Bidirectional indicators -->
+    <path d="M 580 240 L 580 260" stroke="#666" stroke-width="1" marker-start="url(#arrowhead-small)"/>
+    <path d="M 620 240 L 620 260" stroke="#666" stroke-width="1" marker-end="url(#arrowhead-small)"/>
+    
+    <path d="M 580 400 L 580 420" stroke="#666" stroke-width="1" marker-start="url(#arrowhead-small)"/>
+    <path d="M 620 400 L 620 420" stroke="#666" stroke-width="1" marker-end="url(#arrowhead-small)"/>
+    
+    <path d="M 580 540 L 580 560" stroke="#666" stroke-width="1" marker-start="url(#arrowhead-small)"/>
+    <path d="M 620 540 L 620 560" stroke="#666" stroke-width="1" marker-end="url(#arrowhead-small)"/>
+    
+    <path d="M 580 700 L 580 720" stroke="#666" stroke-width="1" marker-start="url(#arrowhead-small)"/>
+    <path d="M 620 700 L 620 720" stroke="#666" stroke-width="1" marker-end="url(#arrowhead-small)"/>
+  </g>
+  
+  <!-- External Interface -->
+  <g id="external-interface">
+    <rect x="350" y="880" width="500" height="60" fill="#333" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="600" y="915" text-anchor="middle" font-size="14" font-weight="bold" fill="white">Vast Data Cluster API Endpoint</text>
+    
+    <path d="M 600 840 L 600 880" stroke="#333" stroke-width="3" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Side annotations -->
+  <g id="annotations">
+    <text x="80" y="180" text-anchor="end" font-size="10" fill="#666" transform="rotate(-90 80 180)">NetBackup Interface</text>
+    <text x="80" y="330" text-anchor="end" font-size="10" fill="#666" transform="rotate(-90 80 330)">Business Logic</text>
+    <text x="80" y="480" text-anchor="end" font-size="10" fill="#666" transform="rotate(-90 80 480)">Concurrency</text>
+    <text x="80" y="640" text-anchor="end" font-size="10" fill="#666" transform="rotate(-90 80 640)">Vast Integration</text>
+    <text x="80" y="780" text-anchor="end" font-size="10" fill="#666" transform="rotate(-90 80 780)">Network</text>
+  </g>
+  
+  <!-- Arrow definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+    <marker id="arrowhead-small" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#666"/>
+    </marker>
+  </defs>
+</svg>

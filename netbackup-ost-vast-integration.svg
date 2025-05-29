@@ -1,0 +1,136 @@
+<svg viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="700" y="30" text-anchor="middle" font-size="24" font-weight="bold" fill="#333">NetBackup OST Architecture with Vast Data Integration</text>
+  
+  <!-- NetBackup Components Section -->
+  <g id="netbackup-section">
+    <rect x="50" y="60" width="600" height="720" fill="white" stroke="#333" stroke-width="2" rx="10"/>
+    <text x="350" y="90" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">NetBackup Components</text>
+    
+    <!-- Master Server -->
+    <rect x="200" y="120" width="300" height="80" fill="#f5f5f5" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="350" y="165" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">NetBackup Master Server</text>
+    
+    <!-- Media Servers -->
+    <rect x="100" y="250" width="200" height="60" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="200" y="285" text-anchor="middle" font-size="14" fill="#333">Media Server 1</text>
+    
+    <rect x="400" y="250" width="200" height="60" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="500" y="285" text-anchor="middle" font-size="14" fill="#333">Media Server 2</text>
+    
+    <!-- OST Core Library -->
+    <rect x="100" y="360" width="200" height="60" fill="#f5f5f5" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="200" y="385" text-anchor="middle" font-size="14" fill="#333">OST Core Library</text>
+    <text x="200" y="405" text-anchor="middle" font-size="12" fill="#666">(libsts)</text>
+    
+    <rect x="400" y="360" width="200" height="60" fill="#f5f5f5" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="500" y="385" text-anchor="middle" font-size="14" fill="#333">OST Core Library</text>
+    <text x="500" y="405" text-anchor="middle" font-size="12" fill="#666">(libsts)</text>
+    
+    <!-- OST Plugin -->
+    <rect x="100" y="470" width="200" height="80" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="200" y="500" text-anchor="middle" font-size="14" fill="#333">Vast Data OST Plugin</text>
+    <text x="200" y="520" text-anchor="middle" font-size="12" fill="#666">(libstspiVastDataMT.so)</text>
+    
+    <rect x="400" y="470" width="200" height="80" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="500" y="500" text-anchor="middle" font-size="14" fill="#333">Vast Data OST Plugin</text>
+    <text x="500" y="520" text-anchor="middle" font-size="12" fill="#666">(libstspiVastDataMT.so)</text>
+    
+    <!-- Client Applications -->
+    <rect x="100" y="600" width="150" height="50" fill="#f5f5f5" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="175" y="630" text-anchor="middle" font-size="14" fill="#333">NetBackup Client</text>
+    
+    <rect x="300" y="600" width="150" height="50" fill="#f5f5f5" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="375" y="630" text-anchor="middle" font-size="14" fill="#333">NetBackup Client</text>
+    
+    <rect x="100" y="680" width="150" height="50" fill="#f5f5f5" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="175" y="710" text-anchor="middle" font-size="14" fill="#333">NetBackup Client</text>
+  </g>
+  
+  <!-- Vast Data Components Section -->
+  <g id="vastdata-section">
+    <rect x="750" y="60" width="600" height="720" fill="white" stroke="#333" stroke-width="2" rx="10"/>
+    <text x="1050" y="90" text-anchor="middle" font-size="18" font-weight="bold" fill="#333">Vast Data Components</text>
+    
+    <!-- Vast Cluster -->
+    <rect x="850" y="120" width="400" height="550" fill="#f5f5f5" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="1050" y="150" text-anchor="middle" font-size="16" font-weight="bold" fill="#333">Vast Data Cluster</text>
+    
+    <!-- Storage Servers -->
+    <rect x="900" y="180" width="300" height="80" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="1050" y="215" text-anchor="middle" font-size="14" fill="#333">Storage Server Pool</text>
+    <text x="1050" y="235" text-anchor="middle" font-size="12" fill="#666">(VastData:cluster-name)</text>
+    
+    <!-- LSUs -->
+    <rect x="900" y="290" width="140" height="60" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="970" y="325" text-anchor="middle" font-size="12" fill="#333">LSU 1</text>
+    
+    <rect x="1060" y="290" width="140" height="60" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="1130" y="325" text-anchor="middle" font-size="12" fill="#333">LSU 2</text>
+    
+    <!-- Images -->
+    <rect x="900" y="380" width="60" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="930" y="405" text-anchor="middle" font-size="10" fill="#666">Image</text>
+    
+    <rect x="980" y="380" width="60" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="1010" y="405" text-anchor="middle" font-size="10" fill="#666">Image</text>
+    
+    <rect x="1060" y="380" width="60" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="1090" y="405" text-anchor="middle" font-size="10" fill="#666">Image</text>
+    
+    <rect x="1140" y="380" width="60" height="40" fill="white" stroke="#666" stroke-width="1" rx="3"/>
+    <text x="1170" y="405" text-anchor="middle" font-size="10" fill="#666">Image</text>
+    
+    <!-- Vast Services -->
+    <rect x="900" y="450" width="300" height="60" fill="white" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="1050" y="485" text-anchor="middle" font-size="14" fill="#333">Vast Data Services</text>
+    
+    <!-- Vast Storage -->
+    <rect x="900" y="540" width="300" height="100" fill="#f5f5f5" stroke="#333" stroke-width="2" rx="5"/>
+    <text x="1050" y="570" text-anchor="middle" font-size="14" fill="#333">Vast Universal Storage</text>
+    <text x="1050" y="590" text-anchor="middle" font-size="12" fill="#666">(NVMe + QLC Flash)</text>
+    <text x="1050" y="610" text-anchor="middle" font-size="12" fill="#666">Deduplication Engine</text>
+  </g>
+  
+  <!-- Connections -->
+  <!-- Master to Media Servers -->
+  <path d="M 350 200 L 200 250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 350 200 L 500 250" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Media Servers to OST Core -->
+  <path d="M 200 310 L 200 360" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 500 310 L 500 360" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- OST Core to Plugin -->
+  <path d="M 200 420 L 200 470" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M 500 420 L 500 470" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Plugin to Vast -->
+  <path d="M 300 510 L 850 220" stroke="#333" stroke-width="3" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  <path d="M 600 510 L 850 240" stroke="#333" stroke-width="3" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  
+  <!-- Clients to Media Servers -->
+  <path d="M 175 600 L 200 310" stroke="#666" stroke-width="2" marker-end="url(#arrowhead-gray)"/>
+  <path d="M 375 600 L 500 310" stroke="#666" stroke-width="2" marker-end="url(#arrowhead-gray)"/>
+  <path d="M 175 680 L 200 310" stroke="#666" stroke-width="2" marker-end="url(#arrowhead-gray)"/>
+  
+  <!-- Protocol Labels -->
+  <text x="450" y="500" text-anchor="middle" font-size="12" fill="#333" font-weight="bold">Proprietary Protocol</text>
+  <text x="450" y="520" text-anchor="middle" font-size="12" fill="#666">(REST API / gRPC)</text>
+  
+  <!-- API Labels -->
+  <text x="200" y="345" text-anchor="middle" font-size="10" fill="#666">OST API</text>
+  <text x="500" y="345" text-anchor="middle" font-size="10" fill="#666">OST API</text>
+  <text x="200" y="455" text-anchor="middle" font-size="10" fill="#666">Plugin API</text>
+  <text x="500" y="455" text-anchor="middle" font-size="10" fill="#666">Plugin API</text>
+  
+  <!-- Arrow definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+    <marker id="arrowhead-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#666"/>
+    </marker>
+  </defs>
+</svg>
