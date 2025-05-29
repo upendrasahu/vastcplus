@@ -122,7 +122,7 @@ The Vast Data OpenStorage Technology (OST) driver enables seamless integration b
 
 ![Vast Data OST Driver Layer Architecture](./ost-driver-layers.svg)
 
-## 3.2 Data Transfer Protocol Options
+### 3.2 Data Transfer Protocol Options
 
 ### Available Protocols for Vast Data
 
