@@ -35,6 +35,8 @@ The Vast Data OpenStorage Technology (OST) driver enables seamless integration b
 
 #### NetBackup Components
 
+![NetBackup Components](./netbackup-components.jpg)
+
 **Master Server**
 - Central management point for all NetBackup operations
 - Manages backup policies, schedules, and catalog information
@@ -44,6 +46,12 @@ The Vast Data OpenStorage Technology (OST) driver enables seamless integration b
 - Execute backup and restore operations
 - Load and manage the OST core library and Vast Data plugin
 - Handle data movement between clients and storage
+
+**NetBackup Clients**
+- Systems being backed up
+- Send data to media servers for storage
+
+#### OST Components
 
 **OST Core Library (libsts)**
 - Provides the abstraction layer between NetBackup and storage plugins
@@ -55,9 +63,6 @@ The Vast Data OpenStorage Technology (OST) driver enables seamless integration b
 - Translates OST operations to Vast Data REST API calls
 - Manages authentication and connection pooling
 
-**NetBackup Clients**
-- Systems being backed up
-- Send data to media servers for storage
 
 #### Vast Data Components
 
