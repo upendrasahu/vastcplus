@@ -237,8 +237,43 @@ Each image has a companion `.meta` file containing:
    ```
 
 ---
+## 7. Implementation Details
 
-## 7. Advantages of NFS-Based Approach
+### Storage Mapping
+```
+NetBackup Storage Server: VastData:cluster-prod-01
+NetBackup LSU: backup-pool-01
+NFS Mount: /mnt/vast-netbackup
+LSU Path: /mnt/vast-netbackup/backup-pool-01/
+Image Path: /mnt/vast-netbackup/backup-pool-01/client-name-20240115-full/image.data
+```
+
+### Performance Parameters
+```
+Block Size: 64MB (optimal for Vast NFS)
+Thread Pool: 8-16 threads
+Buffer Count: 3 per thread
+Mount Options: rsize=1048576,wsize=1048576
+Direct I/O: Yes (O_DIRECT flag)
+```
+
+### File Operations
+```
+Backup:
+- open("/mnt/vast-netbackup/lsu/image.data", O_WRONLY | O_CREAT | O_DIRECT)
+- write() in 64MB chunks
+- fsync() for durability
+- close()
+
+Restore:
+- open("/mnt/vast-netbackup/lsu/image.data", O_RDONLY | O_DIRECT)
+- read() in chunks
+- close()
+```
+
+
+---
+## 8. Advantages of NFS-Based Approach
 
 ### Why NFS is Optimal for Vast Data:
 
@@ -273,7 +308,7 @@ Each image has a companion `.meta` file containing:
 
 ---
 
-## 8. Configuration
+## 9. Configuration
 
 ### NFS Mount Configuration
 ```bash
@@ -317,7 +352,7 @@ nbdevconfig -createdp -dp Vast_Pool_01 \
 
 ---
 
-## 9. Alternative Approaches
+## 10. Alternative Approaches
 
 ### If Vast Provides Additional APIs:
 
@@ -341,7 +376,7 @@ nbdevconfig -createdp -dp Vast_Pool_01 \
 
 ---
 
-## 10. Summary
+## 11. Summary
 
 The Vast Data OST driver implementation using NFS provides:
 
