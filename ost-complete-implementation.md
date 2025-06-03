@@ -1,10 +1,10 @@
 # Vast OST Driver - Complete Implementation Guide
 
 ## 1. API Abstraction Layer
-
-### 1.1 Storage Server Abstraction
-
 The OST API abstracts physical storage into three hierarchical levels:
+### 1.1 Storage Server Abstraction
+The storage server represents the entire Vast cluster from NetBackup's perspective. It's the top-level entity that manages connections and capabilities.
+
 
 ```c
 // Storage Server - Represents the Vast cluster
@@ -174,10 +174,9 @@ typedef struct vast_image_handle {
 ```
 
 ## 2. Storage Server Discovery
+Since OST doesn't support automatic discovery, administrators must explicitly configure storage servers. The plugin then validates and connects to them.
 
 ### 2.1 Discovery Mechanisms
-
-Since OST doesn't support automatic discovery, administrators must explicitly configure storage servers. The plugin then validates and connects to them.
 
 ```c
 // Storage server naming convention:
